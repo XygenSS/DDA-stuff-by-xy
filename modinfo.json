@@ -5,7 +5,7 @@
     "name": "Escape From Tarkov Stimulants",
     "authors": [ "Xygen" ],
     "description": "Military stimulant injectors with various effects, inspired from Escape From Tarkov.",
-    "category": "content",
+    "category": "items",
     "dependencies": [ "dda" ]
   }
 ]
