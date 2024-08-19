@@ -1,0 +1,11 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "Wingmirrors_QOL",
+    "name": "Wing Mirror QOL Cheat",
+    "authors": [ "Xygen" ],
+    "description": "Convenience-oriented mod that makes wing mirrors passable, repairable for free, and more durable.",
+    "category": "rebalance",
+    "dependencies": [ "dda" ]
+  }
+]
