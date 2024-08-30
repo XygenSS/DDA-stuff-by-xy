@@ -1,0 +1,180 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "Amrita",
+    "name": "Amrita",
+    "authors": [ "Xygen" ],
+    "description": "Drink the elixir of the gods and free your mind.  Allows you to freely switch characters without the use of the debug menu.",
+    "category": "rebalance",
+    "dependencies": [ "dda" ]
+  },
+  {
+    "type": "mutation",
+    "id": "AMRITA",
+    "name": { "str": "Freed mind" },
+    "points": 0,
+    "description": "You are acutely aware of the higher powers controlling the universe.",
+    "starting_trait": false,
+    "valid": false,
+    "purifiable": false,
+    "profession": true,
+    "player_display": true,
+    "active": true,
+    "activated_is_setup": false,
+    "activated_eocs": [ "EOC_amrita" ]
+  },
+  {
+    "type": "COMESTIBLE",
+    "id": "amrita_elixir",
+    "looks_like": "wine_noir",
+    "name": { "str_sp": "Amrita" },
+    "weight": "50 g",
+    "color": "white",
+    "consumption_effect_on_conditions": [ "EOC_amrita_consume" ],
+    "stim": -8,
+    "container": "bottle_glass",
+    "comestible_type": "MED",
+    "symbol": "~",
+    "quench": 0,
+    "calories": 0,
+    "description": "The elixir of the Gods.  Drink this to free your mind.",
+    "price": "0 USD",
+    "price_postapoc": "0 USD",
+    "material": [ "alcohol", "water" ],
+    "primary_material": "alcohol",
+    "volume": "250 ml",
+    "phase": "liquid",
+    "charges": 1,
+    "flags": [ "EATEN_COLD", "NO_AUTO_CONSUME" ],
+    "fun": 0,
+    "freezing_point": -8
+  },
+  {
+    "type": "recipe",
+    "activity_level": "NO_EXERCISE",
+    "result": "amrita_elixir",
+    "charges": 1,
+    "category": "CC_CHEM",
+    "subcategory": "CSC_CHEM_DRUGS",
+    "skill_used": "cooking",
+    "difficulty": 1,
+    "time": "2 m",
+    "autolearn": false,
+	"book_learn": [ [ "book_amrita", 0 ] ],
+    "qualities": [ { "id": "CHEM", "level": 1 } ],
+    "tools": [ [ [ "water_boiling_heat", 3, "LIST" ] ] ],
+    "components": [
+      [ [ "dayquil", 15 ] ],
+      [ [ "iodine_crystal", 15 ] ],
+      [ [ "red_phosphorous", 3 ], [ "red_phosphorous_small", 270 ] ],
+      [ [ "chem_acetone", 1 ] ],
+      [ [ "chem_methanol", 3 ] ],
+      [ [ "lye_powder", 5 ], [ "chem_potassium_hydroxide", 25 ], [ "lye", 1 ], [ "lye_potassium", 1 ] ]
+    ]
+  },
+  {
+    "id": "book_amrita",
+    "type": "BOOK",
+    "category": "manuals",
+    "name": { "str": "strange writing", "str_pl": "strange writings" },
+    "description": "A writing on a piece of paper that describes how to formulate something called \"the elixir of the Gods.\"",
+    "weight": "2 g",
+    "volume": "50 ml",
+    "price": "0 USD",
+    "price_postapoc": "0 USD",
+    "material": "paper",
+    "symbol": "?",
+    "color": "blue",
+    "looks_like": "flyer",
+    "intelligence": 6,
+    "time": "10 m",
+    "fun": -7
+  },
+  {
+    "type": "recipe",
+    "activity_level": "NO_EXERCISE",
+    "result": "book_amrita",
+    "charges": 1,
+    "category": "CC_OTHER",
+    "subcategory": "CSC_OTHER_OTHER",
+    "time": "16 m",
+    "autolearn": false,
+    "tools": [ [ [ "drawing_tool", 5, "LIST" ] ] ],
+    "components": [ [ [ "paper", 1 ] ] ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_amrita",
+    "effect": [ "take_control_menu" ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_amrita_consume",
+    "effect": [
+      {
+        "if": { "u_has_trait": "AMRITA", "value": "yes" },
+        "then": { "u_message": "You drink the elixir, but nothing happens.  It was unwise to waste the sacred drink on a body that has already awakened to the truth.", "type": "bad" },
+        "else": { "run_eocs": [ "EOC_amrita_gain" ] }
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_amrita_gain",
+    "effect": [
+      {
+        "if": { "u_has_var": "eoc_amrita_not_first_time", "value": "yes" },
+        "then": [ { "u_message": "You shiver intensely as your mortal form loosens the grip on your mind.  It feels good to be free once again.", "type": "mixed" }, { "u_add_trait": "AMRITA" }, { "u_learn_recipe": "book_amrita" }, { "u_add_effect": "downed", "duration": 1 }, { "u_add_effect": "stunned", "duration": 5 } ],
+        "else": [
+          { "u_message": "You shudder and spasm intensely as your mortal form loosens the grip on your mind for the first time.  You lose control of your body as you recognize that you are not part of it, but are merely controlling it.", "type": "mixed" }, { "u_add_trait": "AMRITA" }, { "u_learn_recipe": "book_amrita" }, { "u_add_effect": "downed", "duration": 1 }, { "u_add_effect": "stunned", "duration": 5 },
+          {
+            "if": { "not": { "u_has_var": "eoc_amrita_not_first_time", "value": "yes" } },
+            "then": [ { "u_add_var": "eoc_amrita_not_first_time", "value": "yes" }, { "u_message": "You realize that your mind may become trapped inside a foreign body if you decide to take control of one that has not been awakened like yours.  Perhaps it may be wise to prepare more of the sacred drink ahead of time, or write a recipe for others to study.", "type": "bad" } ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "profession",
+    "subtype": "hobby",
+    "id": "hobby_amrita",
+    "name": "Freed mind",
+    "description": "You always felt that there were forces and entities beyond human understanding.  When the Cataclysm hit, you had a revelation.  Now you roam the wastelands with a newfound wisdom and awareness, eager to spread the sacred truth to the poor souls trapped within their own minds.",
+    "points": 0,
+    "traits": [ "AMRITA" ],
+	"recipes": [ "amrita_elixir" ]
+  },
+    {
+    "type": "profession",
+    "subtype": "hobby",
+    "id": "hobby_amrita_seeker",
+    "name": "Fledgling mind",
+    "description": "You were never one to believe in gods and miracles, but everything changed when you met \"them\" behind the local Foodplace.  Since then you've worked tirelessly towards the truth while the world ended around you, and you are certain you're close to figuring it all out, but first you will need a few ingredients...",
+    "points": 0,
+	"missions": [ "MISSION_AMRITA_SEEKER" ],
+    "recipes": [ "amrita_elixir" ]
+  },
+  {
+    "id": "MISSION_AMRITA_SEEKER",
+    "type": "mission_definition",
+    "name": { "str": "Seek the truth" },
+    "description": "You must set your mind free.  Craft and consume the elixir of the Gods to face the truth, once and for all.",
+    "goal": "MGOAL_CONDITION",
+    "goal_condition": { "u_has_trait": "AMRITA" },
+    "difficulty": 3,
+    "value": 0,
+    "end": {
+      "effect": [
+        {
+          "u_add_morale": "morale_feeling_good",
+          "bonus": 20,
+          "max_bonus": 50,
+          "duration": "120 minutes",
+          "decay_start": "120 minutes"
+        }
+      ]
+    },
+    "origins": [ "ORIGIN_GAME_START" ]
+  }
+]
