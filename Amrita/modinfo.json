@@ -57,7 +57,7 @@
     "category": "CC_CHEM",
     "subcategory": "CSC_CHEM_DRUGS",
     "skill_used": "chemistry",
-    "difficulty": 2,
+    "difficulty": 0,
     "time": "20 m",
     "autolearn": false,
     "book_learn": [ [ "book_amrita", 0 ] ],
