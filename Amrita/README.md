@@ -10,8 +10,9 @@ The only way to access crafting recipes related to the mod is to start with thes
 First, craft a dose of Amrita. Drinking it will grant you the "freed mind" mutation, which can be activated to bring up the character switch menu.
 Be warned: If you switch to a character that has not freed their mind, you will be stuck in that character until you acquire another dose of Amrita or use the camp function to switch back!
 Obtaining the "freed mind" mutation will also let you craft a "strange writing," which is a manual that contains the recipe for Amrita.
-### Why is the crafting recipe so complicated?
-The recipe is entirely arbitrary, feel free to change it to anything you want!
+### Why is the crafting recipe so complicated? Can I make it easier?
+The recipe is entirely arbitrary. You can opt for an easier version by also installing the additional modinfo.md found inside the "easy_recipe" folder.
+If you still disagree with the recipe, feel free to change it to anything you want!
 ### Why let players switch to characters without freed mind and be stuck?
 This mod is also my first time working with EoCs; I basically started with an "active mutation that brings up the character switch menu" and added extra fluff around it. Maybe one day I might be able to make an Amrita 2.0 with proper switch logic and stuff...
 ### The lore makes no sense, is my character controlling my follower's mind, or am I breaking the fourth wall?
