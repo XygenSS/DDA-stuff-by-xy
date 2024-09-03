@@ -6,6 +6,8 @@ The only way to access crafting recipes related to the mod is to start with thes
 
 # Questions
 
+### How do you install?
+Download the repo, and put the "amrita" folder inside (cataclysm directory)/data/mods
 ### How do you use this mod?
 First, craft a dose of Amrita. Drinking it will grant you the "freed mind" mutation, which can be activated to bring up the character switch menu.
 Be warned: If you switch to a character that has not freed their mind, you will be stuck in that character until you acquire another dose of Amrita or use the camp function to switch back!
