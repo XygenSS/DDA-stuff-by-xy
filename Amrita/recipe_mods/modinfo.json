@@ -1,0 +1,31 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "Amrita_recipe_easy",
+    "name": "Easy Amrita recipe",
+    "authors": [ "Xygen" ],
+    "description": "Simplifies the recipe for Amrita.",
+    "category": "rebalance",
+    "dependencies": [ "Amrita" ]
+  },
+  {
+    "type": "recipe",
+    "activity_level": "NO_EXERCISE",
+    "result": "amrita_elixir",
+    "charges": 1,
+    "category": "CC_CHEM",
+    "subcategory": "CSC_CHEM_DRUGS",
+    "skill_used": "chemistry",
+    "difficulty": 0,
+    "time": "20 m",
+    "autolearn": false,
+    "book_learn": [ [ "book_amrita", 0 ] ],
+    "qualities": [ { "id": "CHEM", "level": 1 } ],
+    "tools": [ [ [ "water_boiling_heat", 3, "LIST" ] ] ],
+    "components": [
+      [ [ "lsd", 1 ] ],
+      [ [ "poppy_bud", 3 ] ],
+      [ [ "hard_liquor", 1, "LIST" ] ]
+    ]
+  }
+]
