@@ -14,7 +14,7 @@ Obtaining the "freed mind" mutation will also let you craft a "strange writing,"
 The recipe is entirely arbitrary, feel free to change it to anything you want!
 ### Why let players switch to characters without freed mind and be stuck?
 This mod is also my first time working with EoCs; I basically started with an "active mutation that brings up the character switch menu" and added extra fluff around it. Maybe one day I might be able to make an Amrita 2.0 with proper switch logic and stuff...
-#### The lore makes no sense, is my character controlling my follower's mind, or am I breaking the fourth wall?
+### The lore makes no sense, is my character controlling my follower's mind, or am I breaking the fourth wall?
 I gave no effort into the "lore!" Try not to think too much about it because it'll make less sense the more you do.
 
 Have fun! -Xy
