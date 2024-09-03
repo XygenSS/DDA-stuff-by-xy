@@ -4,6 +4,8 @@ A small mod that allows you to switch characters at will without using the debug
 ## Warning: You MUST choose either "Fledgling mind" or "Freed mind" background hobby when creating a character!
 The only way to access crafting recipes related to the mod is to start with these backgrounds. Items related to the mod will NOT spawn naturally in the world.
 
+Pick "Fledgling mind" to start with the knowledge necessary to craft the Amrita. Pick "Freed mind" to start with the mutation from the start, allowing you to character-switch immediately after gaining a follower.
+
 # Questions
 
 ### How do you install?
